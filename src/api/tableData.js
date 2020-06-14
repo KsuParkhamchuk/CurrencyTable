@@ -12,14 +12,5 @@ export default {
         console.log(error);
       });
   },
-  updateTableData(self){
-    return axios.get("https://www.nbrb.by/api/exrates/rates?periodicity=0")
-    .then(response => {
-        self.$store.commit("UPDATE_CURRENCY", response.data);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-  }
 };
 

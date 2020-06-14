@@ -6,7 +6,7 @@
         <div class="header__controlBtns">
           <v-row justify="center">
             <Modal
-              :object="this.newCurrency"
+              :object="newCurrency"
               :modalAction="addNewCurrency"
               :dialog="dialog"
               :toggleModal="toggleModal"
@@ -60,9 +60,8 @@ export default {
     toggleModal() {
       this.dialog = !this.dialog;
     },
-
     
-    checkIsEmpty() {
+    checkIsNotEmpty() {
       for (let key in this.newCurrency) {
         if (!this.newCurrency[key]) {
           return false;
@@ -71,11 +70,9 @@ export default {
       return true;
     },
 
-
     addNewCurrency() {
-      if (this.checkIsEmpty()) {
-        let temp = { ...this.newCurrency };
-        this.$store.commit("ADD_NEW_CURRENCY", temp);
+      if (this.checkIsNotEmpty()) {
+        this.$store.commit("ADD_NEW_CURRENCY", {...this.newCurrency});
         for (let key in this.newCurrency) {
           this.newCurrency[key] = "";
         }
@@ -87,7 +84,7 @@ export default {
 
     updateTable() {
       const self = this;
-      tableDataApi.updateTableData(self).then(() => {
+     tableDataApi.getTableData(self).then(() => {
         this.updateTrigger += 1;
       });
     }

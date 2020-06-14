@@ -13,10 +13,6 @@ export default {
   components: {
     CurrencyTableView,
   },
-
-  data: () => ({
-    //
-  }),
 };
 </script>
 

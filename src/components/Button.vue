@@ -11,23 +11,11 @@
 
 
 export default {
-
     props:{
         btnText: String,
         btnIcon: String,
         action: Function
     },
-
-
-    data(){
-        return{
-
-        }
-    },
-
-    methods:{
-
-    }
 }
 </script>
 

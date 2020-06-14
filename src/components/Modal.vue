@@ -71,12 +71,6 @@ export default {
     dialog: Boolean,
     toggleModal: Function
   },
-
-  data() {
-    return {};
-  },
-
-  methods: {}
 };
 </script>
 
@@ -94,12 +88,10 @@ export default {
   border-radius: 20px;
   box-shadow: 0 0 7px #aaaaaa;
 
-  &:hover{
+  &:hover {
      box-shadow: 0 0 7px #aaaaaa inset;
   }
 }
-
-
 
 .modalWindow__closeCross,
 .modalWindow__closeCross:before,
@@ -153,10 +145,12 @@ export default {
     width: 250px;
     height: 60px !important;
     box-shadow: 0 0 7px #333333;
-  }
 
-  & button:hover {
+    &:hover {
     box-shadow: 0 0 7px #333333 inset;
   }
+  }
+
+  
 }
 </style>
